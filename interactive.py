@@ -122,7 +122,8 @@ def plot_discount_factors_split(cashflows, current_r=None, show_current=False, p
         opacity=0.85,
         text=[f'{df:.3f}' for df in discount_factors],
         textposition='outside',
-        textfont=dict(size=13, color=DARK_BLUE),
+        textfont_size=13,
+        textfont_color=DARK_BLUE,
         hovertemplate='<b>Year %{x}</b><br>Discount Factor: %{y:.4f}<extra></extra>',
         showlegend=False
     ))
@@ -134,13 +135,13 @@ def plot_discount_factors_split(cashflows, current_r=None, show_current=False, p
         font=dict(family="Arial, sans-serif", size=14, color="#333333"),
         xaxis=dict(
             title="",
-            tickfont=dict(size=13),
+            tick_font=dict(size=13),
             showgrid=False
         ),
         yaxis=dict(
             title="Discount Factor",
-            titlefont=dict(size=15, color=DARK_BLUE),
-            tickfont=dict(color=DARK_BLUE, size=12),
+            title_font=dict(size=15, color=DARK_BLUE),
+            tick_font=dict(color=DARK_BLUE, size=12),
             showgrid=True,
             gridcolor='rgba(128,128,128,0.15)',
             range=[0, max_factor * 1.3]
@@ -165,7 +166,8 @@ def plot_discount_factors_split(cashflows, current_r=None, show_current=False, p
         opacity=0.85,
         text=[f'£{cf:.0f}' for cf in discounted_cfs],
         textposition='outside',
-        textfont=dict(size=13, color=DARK_RED),
+        textfont_size=13,
+        textfont_color=DARK_RED,
         hovertemplate='<b>Year %{x}</b><br>Discounted CF: £%{y:.0f}<extra></extra>',
         showlegend=False
     ))
@@ -179,14 +181,14 @@ def plot_discount_factors_split(cashflows, current_r=None, show_current=False, p
         font=dict(family="Arial, sans-serif", size=14, color="#333333"),
         xaxis=dict(
             title="Year",
-            titlefont=dict(size=15, color="#333333"),
-            tickfont=dict(size=13),
+            title_font=dict(size=15, color="#333333"),
+            tick_font=dict(size=13),
             showgrid=False
         ),
         yaxis=dict(
             title="Discounted Cashflows (£)",
-            titlefont=dict(size=15, color=DARK_RED),
-            tickfont=dict(color=DARK_RED, size=12),
+            title_font=dict(size=15, color=DARK_RED),
+            tick_font=dict(color=DARK_RED, size=12),
             showgrid=True,
             gridcolor='rgba(128,128,128,0.15)',
             range=[min(min_cf * 1.2, -max_cf * 0.2), max_cf * 1.2]
@@ -265,8 +267,8 @@ def plot_npv_curve(cashflows, title, irr_val, current_r=None, show_current=False
         xaxis=dict(
             title="Hurdle Rate (%)",
             autorange=True,
-            titlefont=dict(size=14, color="#333333"),
-            tickfont=_DEF_FONT,
+            title_font=dict(size=14, color="#333333"),
+            tick_font=_DEF_FONT,
             showgrid=True,
             gridcolor='rgba(128,128,128,0.15)',
             title_standoff=14
@@ -274,8 +276,8 @@ def plot_npv_curve(cashflows, title, irr_val, current_r=None, show_current=False
         yaxis=dict(
             title="NPV ($)",
             autorange=True,
-            titlefont=dict(size=14, color="#333333"),
-            tickfont=_DEF_FONT,
+            title_font=dict(size=14, color="#333333"),
+            tick_font=_DEF_FONT,
             showgrid=True,
             gridcolor='rgba(128,128,128,0.15)'
         ),
